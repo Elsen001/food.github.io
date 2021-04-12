@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: black;
+  background-size: cover;
+  background-position: center;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 90px;
+}
+nav input {
+  display: none;
+}
+nav div {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  display: none;
+}
+nav img {
+  width: 80px;
+  border-radius: 70%;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+nav label,
+nav label::after,
+nav label::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+nav label {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+nav label::after {
+  position: absolute;
+  bottom: 15px;
+}
+nav label::before {
+  position: absolute;
+  top: 15px;
+}
+nav #click:checked + div label {
+  background: transparent;
+}
+nav #click:checked + div label::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 0;
+}
+nav #click:checked + div label::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 0;
+}
+nav ul {
+  right: 40px;
+  position: absolute;
+}
+nav li {
+  display: inline-block;
+  margin-right: 50px;
+}
+nav a {
+  position: relative;
+  color: white;
+  text-shadow: 2px 2px 4px #eee2e2;
+}
+nav a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+@media screen and (max-width: 700px) {
+  nav img {
+    position: absolute;
+    right: 30px;
+    width: 70px;
+  }
+  nav .fa-bars {
+    display: block;
+  }
+  nav div {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: block;
+    z-index: 5;
+  }
+  nav ul {
+    background-color: black;
+    display: none;
+    top: 0%;
+    width: 50%;
+    height: 100%;
+    left: -50%;
+    text-align: center;
+  }
+  nav ul li:first-child {
+    margin-top: 150px;
+  }
+  nav ul li {
+    display: block;
+    margin-top: 70px;
+    margin-right: 0;
+  }
+  nav ul li a:hover {
+    color: black;
+  }
+  nav #click:checked ~ ul {
+    display: block;
+    left: 0;
+    z-index: 4;
+  }
+}
+#search-box {
+  text-align: center;
+}
+#search-box input {
+  width: 30%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  background: none;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  #search-box input {
+    margin-top: 20px;
+    width: 60%;
+  }
+}
+#category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 15px 60px;
+  margin-top: 10%;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  z-index: 1;
+  cursor: pointer;
+  color: white;
+  border-radius: 10%;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  overflow-y: auto;
+  background: none;
+  border: 1px solid white;
+}
+.card .text {
+  display: none;
+  font-size: 14px;
+}
+.card:hover .text {
+  display: block;
+}
+.card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#searchInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50px;
+}
+#searchInner .meal {
+  width: 30%;
+  position: relative;
+  margin: 20px;
+}
+#searchInner .meal h3, #searchInner .meal li {
+  color: white;
+  list-style-type: none;
+}
+#searchInner .meal li {
+  position: absolute;
+  left: 0;
+}
+#searchInner .meal h3 {
+  text-align: center;
+}
+#searchInner .meal img {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+#searchInner .inst {
+  width: 60%;
+  height: 400px;
+  overflow: auto;
+  margin-left: 30px;
+}
+#searchInner .inst p {
+  color: white;
+}
+#searchInner .inst h2 {
+  color: white;
+}
+#searchInner ul {
+  margin-left: 30px;
+}
+#searchInner ul li {
+  margin: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  #searchInner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #searchInner .meal {
+    width: 60%;
+    margin: 20px auto;
+  }
+  #searchInner .meal img {
+    width: 100%;
+  }
+  #searchInner .inst {
+    width: 75%;
+    margin: 20px auto;
+  }
+}
+#filter {
+  margin-top: 29px;
+  text-align: center;
+}
+#filter span {
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+#footer {
+  background-color: white;
+}
+#footer #links {
+  text-align: center;
+}
+#footer #links li {
+  display: inline-block;
+  margin: 10px;
+}
+#footer #social {
+  text-align: center;
+}
